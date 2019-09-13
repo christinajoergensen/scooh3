@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
     <title></title>
     <style>
         img {
@@ -12,19 +13,23 @@
 
         body {
             margin: 0;
+            padding: 0;
         }
 
         .header {
             background-color: #FCE688;
             grid-area: header;
-            height: 15vw;
+            min-height: 5vw;
+            /*            background-image: linear-gradient(#FCE688, white);*/
         }
 
         footer {
-            height: 30vw;
             width: 100%;
-            grid-area: footer;
-            background-color: #404040
+            height: 10vw;
+            text-align: center;
+            color: whitesmoke;
+            padding-top: 2vw;
+
         }
 
         video {
@@ -33,54 +38,62 @@
 
         .splash {
             width: 100vw;
-            height: 100%;
             grid-area: splash;
             overflow: hidden;
+            height: 33.8vw;
         }
+
 
 
 
         nav {
             grid-area: nav;
+            background-color: #404040;
             display: flex;
-            justify-content: space-between;
-            padding-left: 70px;
-            padding-right: 70px;
-            margin-top: 30vw;
+            justify-content: center;
+            height: 5vw;
 
 
         }
 
+
+
+
         #container {
+            font-family: 'Varela Round', sans-serif;
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 20vw 20vw 20vw;
+            /*            grid-template-rows: 10vw 50vw 10vw 250vw 20vw;*/
             grid-template-areas:
                 "header header header header"
                 "splash splash splash splash"
-                "kategorier . . ."
                 "nav nav nav nav"
                 "indhold indhold indhold indhold"
-                "footer footer footer footer"
+
 
         }
 
         .filterknap {
-            height: 13vw;
-            width: 13vw;
-            border-radius: 60%;
-            background-color: #F7F7F7;
-            border: none;
+
+
             font-size: 1em;
+            border: none;
+            background-color: #404040;
+            color: white;
+            padding-left: 10vw;
+
+
+
         }
 
         .valgt {
-            height: 13vw;
-            width: 13vw;
-            border-radius: 60%;
-            background-color: #F7F7F7;
-            border: none;
+
             font-size: 1em;
+            border: none;
+            background-color: #404040;
+            color: white;
+
+
         }
 
         /*
@@ -111,37 +124,36 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
             grid-gap: 1em;
-            padding: 4rem;
+            /*            margin: 10vw;*/
+            margin-left: 10vw;
+            margin-right: 10vw;
+            margin-top: 3vw;
         }
 
-        @media only screen and (min-width:678px) {
-            .filterknap {
-                height: 5vw;
-                width: 13vw;
-                border-radius: 0%;
-                background-color: #F7F7F7;
-                border: none;
-                font-size: 1em;
-                margin: 1vw;
-            }
+        h3 {
+            grid-area: kategorier;
+        }
 
-            .valgt {
-                height: 5vw;
-                width: 13vw;
-                border-radius: 0%;
-                background-color: #F7F7F7;
-                border: none;
-                font-size: 1em;
-                margin: 1vw;
-            }
+        .logo {
+            height: 3vw;
+            width: auto;
+            padding-left: 10vw;
+            margin-top: 1vw;
+        }
 
-            nav {
-                display: flex;
-                justify-content: center;
-            }
 
-            h3 {
-                display: none;
+        @media only screen and (min-width: 1143px) {
+            #liste {
+                margin-left: 15vw;
+                margin-right: 15vw;
+            }
+        }
+
+
+        @media only screen and (min-width: 1200px) {
+            #liste {
+                margin-left: 20vw;
+                margin-right: 20vw;
             }
         }
     </style>
@@ -149,13 +161,14 @@
 
 <body>
     <div id="container">
-        <div class="header"></div>
+        <div class="header">
+            <img class="logo" src="img/scoohlogo.png">
+        </div>
         <div class="splash">
             <video autoplay loop muted playsinline>
-                <source src="img/scooh.mp4">
+                <source src="img/scooh3.mp4">
             </video>
         </div>
-        <h3>Categories</h3>
         <nav>
             <button class="valgt" data-kategori="alle">All</button>
             <button class="filterknap" data-kategori="chill">Chill</button>
@@ -175,8 +188,12 @@
                 <p id="pris"></p>
             </article>
         </template>
-        <footer></footer>
+
     </div>
+    <footer>
+        <p>scooh@contact.com</p>
+
+    </footer>
 
 
 
@@ -220,10 +237,12 @@
                     klon.querySelector("#pris").textContent = "Pris: " + sko.gsx$pris.$t + ",-";
 
                     dest.appendChild(klon);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        location.href = `detalje.html?id=${sko.gsx$id.$t}`;
 
+                    })
                 }
-            });
-
+            })
         }
     </script>
 
