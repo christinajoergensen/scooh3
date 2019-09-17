@@ -144,6 +144,7 @@
                 display: none;
             }
         }
+
     </style>
 </head>
 
@@ -220,11 +221,16 @@
                     klon.querySelector("#pris").textContent = "Pris: " + sko.gsx$pris.$t + ",-";
 
                     dest.appendChild(klon);
+                    dest.lastElementChild.addEventListener("click", () => {
+                        location.href = `detalje.html?id=${sko.gsx$id.$t}`;
 
+                    })
                 }
-            });
-
+            })
         }
+
     </script>
 
-</body></html>
+</body>
+
+</html>
