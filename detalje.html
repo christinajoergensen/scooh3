@@ -11,6 +11,7 @@
         }
 
         header {
+<<<<<<< HEAD
             background-color: #FCE688;
             height: 15vw;
         }
@@ -35,6 +36,43 @@
         .txt {
             flex-basis: 300px;
             flex-grow: 1;
+=======
+            background-color: #292929;
+            -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            min-height: 5vw;
+            grid-area: header;
+
+        }
+
+        footer {
+            width: 100%;
+            background-color: #FCE688;
+            grid-area: footer;
+        }
+
+        .skoene {
+            grid-area: sko;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 7vw;
+            margin-top: 0;
+        }
+
+        .txt {
+            padding-top: 7vw;
+            grid-area: text;
+            padding-right: 50px;
+            flex-grow: 1;
+            flex-basis: 300px;
+
+        }
+
+        .image {
+            flex-grow: 1;
+            flex-basis: 600px;
+>>>>>>> origin/master
         }
 
         img {
@@ -49,8 +87,25 @@
             background-color: #404040;
             color: #ffffff;
             font-size: 1em;
+<<<<<<< HEAD
 
         }
+=======
+            -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+
+        }
+
+        /*
+        #buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+        }
+*/
+>>>>>>> origin/master
 
         button.watch {
             text-align: center;
@@ -60,6 +115,12 @@
             background-color: #FDC1C6;
             color: #000000;
             font-size: 1em;
+<<<<<<< HEAD
+=======
+            -webkit-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            -moz-box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+            box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+>>>>>>> origin/master
 
         }
 
@@ -77,19 +138,60 @@
 
         }
 
+<<<<<<< HEAD
+=======
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        .logo {
+            height: 3vw;
+            width: auto;
+            padding-left: 10vw;
+            margin-top: 1vw;
+        }
+
+
+        #detalje {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas:
+                "header header"
+                "sko sko"
+                "footer footer"
+
+        }
+>>>>>>> origin/master
     </style>
 </head>
 
 <body>
+<<<<<<< HEAD
     <header>
     </header>
+=======
+
+    <header>
+        <a href="index.html">
+            <img class="logo" src="img/scoohlogo.png">
+        </a>
+    </header>
+
+>>>>>>> origin/master
     <section id="detalje">
 
         <article class="skoene">
 
 
             <div class="image">
+<<<<<<< HEAD
                 <img src="" alt="">
+=======
+                <img src="img/birkenstock.png" alt="">
+>>>>>>> origin/master
             </div>
             <div class="txt">
                 <button class="luk">〱</button>
@@ -97,11 +199,23 @@
 
                 <p id="type"></p>
                 <p id="pris"></p>
+<<<<<<< HEAD
                 <button class="order">order</button>
                 <button class="watch">watch</button>
             </div>
         </article>
         <footer></footer>
+=======
+
+                <button class="order">order</button>
+                <button class="watch">watch</button>
+
+            </div>
+        </article>
+        <footer>
+            <p>hej</p>
+        </footer>
+>>>>>>> origin/master
     </section>
 
 
@@ -136,14 +250,23 @@
 
                     document.querySelector("h2").textContent = sko.gsx$navn.$t;
                     document.querySelector("#type").textContent = sko.gsx$lang.$t;
+<<<<<<< HEAD
                     document.querySelector("img").src = "img/" + sko.gsx$billede.$t + ".png";
+=======
+                    document.querySelector("image").src = "img/" + sko.gsx$billede.$t + ".png";
+>>>>>>> origin/master
                     document.querySelector("#pris").textContent = "Pris: " + sko.gsx$pris.$t + ",-";
 
                 }
             })
         }
+<<<<<<< HEAD
 
     </script>
 </body>
 
 </html>
+=======
+    </script>
+</body></html>
+>>>>>>> origin/master
